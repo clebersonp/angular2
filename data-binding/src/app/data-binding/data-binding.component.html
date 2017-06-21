@@ -1,0 +1,68 @@
+<section>
+  <h3>Interpolation / Interpolação</h3>
+  <article>
+    <p>O valor da variavel 'name' por Interpolation é: {{ getName() }}</p>
+    <p>Curso de Angular é facil? {{ isAngularFacil && getCurtirCursoAngular() ? 'Sim' : 'Não' }}</p>
+    <p>Soma com expressão na Interpolation: 1 + 1 é ? {{ 1 + 1 }}</p>
+    <p>Soma com expressão na Interpolation e data binding: 1 + 1 não é {{ 1 + 1 + getNumeroParaSoma() }}</p>
+  </article>
+</section>
+
+<section>
+  <h3>Property binding</h3>
+  <article>
+    <!-- interpolation -->
+    <img src="{{ getImagem() }} " >
+    <br>
+    <!-- property binding - [sintex sugar], utilizado para tag que já possui propriedades proprias -->
+    <img [src]="getImagem()+1" >
+    <br>
+    <!-- equivalente ao anterior -->
+    <img bind-src="getImagem()+5" >
+  </article>
+  
+</section>
+</!-->
+<section>
+  <article>
+    <h3>Class e Style Binding</h3>
+  </article>
+</section>
+
+<select #classe (change)="0">
+  <option value="">:: Selecione ::</option>
+  <option value="alert-success">Sucesso</option>
+  <option value="alert-info">Info</option>
+  <option value="alert-warning">Aviso</option>
+  <option value="alert-danger">Perigo</option>
+</select>
+
+<!-- class binding -->
+<div class="alert" role="alert"
+  [class.alert-success]="classe.value == 'alert-success'">
+Sucesso - Class binding
+</div>
+<div class="alert" role="alert"
+  [class.alert-info]="classe.value == 'alert-info'">
+Info - Class binding
+</div>
+<div class="alert" role="alert"
+  [class.alert-warning]="classe.value == 'alert-warning'">
+Aviso - Class binding
+</div>
+<div class="alert" role="alert"
+  [class.alert-danger]="classe.value == 'alert-danger'">
+Perigo - Class binding
+</div>
+
+<!--> style bind</!-->
+<div class="alert alert-danger" role="alert"
+  [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
+Erro - Style Binding - Só aparece se for selecionado Perigo no combo
+</div>
+
+<div class="alert {{ classe.value }}" role="alert">
+Exemplo de interpolation. Texto colorido de acordo com a seleção do combo
+</div>
+
+
