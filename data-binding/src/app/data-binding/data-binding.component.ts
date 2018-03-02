@@ -13,6 +13,8 @@ export class DataBindingComponent implements OnInit {
 
   urlImagem: string = "http://lorempixel.com/400/200/animals/";
 
+  nomeCurso: string = "Angular passado via Decorator @Input() -> Input Property";
+
   constructor() { }
 
   ngOnInit() {

@@ -1,0 +1,37 @@
+<div>
+
+  Meu nome é "{{ nome }}" 
+  <br>
+  <input type="text" 
+    [value]="nome"
+  >
+
+  <!-- Two way data binding -->
+  <input type="text"
+    [value]="nome"
+    (input)="nome = $event.target.value"
+  >
+
+  <input type="text" #variavelGlobal
+    [value]="nome"
+    (input)="nome = variavelGlobal.value"
+  >
+
+  <!-- Para usar o two way data-binding com ngModel precisa importar o -->
+  <input type="text"
+    [ngModel]="nome"
+    (ngModelChange)="nome = $event"
+  >
+
+  <br><br>
+  Meu nome é "{{ pessoa.nome }}" e minha idade é "{{ pessoa.idade }}"
+  <br>  
+  <input type="text"
+    [(ngModel)]="pessoa.nome"
+  >
+  <input type="text"
+    [(ngModel)]="pessoa.idade"
+  >
+
+
+</div>

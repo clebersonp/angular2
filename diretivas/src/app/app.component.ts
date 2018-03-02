@@ -7,16 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-
-  valor: number = 7;
-  destroiComponente: boolean = false;
-
-  onClickMudarValor() {
-    this.valor++;
-  }
-
-  onClickDestruir() {
-    this.destroiComponente = true;
-  }
-
 }

@@ -31,3 +31,11 @@
 
   </article>
 </section>
+
+<br><br>
+<p>Exemplo Two Way Data Binding</p>
+<br>
+<app-two-way-data-binding></app-two-way-data-binding>
+
+<contador [valor]="valorInicial" (mudouValor)="onMudouValor($event)"></contador>
+<span>{{ novoValor }}</span>

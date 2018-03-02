@@ -11,6 +11,9 @@ export class DataBindingEventComponent implements OnInit {
   public salvaValor: string = '';
   public keyPress: string = '';
   public isMouseOver: boolean = false;
+  public novoValor = "";
+
+  valorInicial: number = 8;
 
   salvarValorKeyPress(value: string) {
     this.keyPress = value.toLowerCase();
@@ -36,6 +39,14 @@ export class DataBindingEventComponent implements OnInit {
 
   salvarValor(valor) {
     this.salvaValor = valor;
+  }
+
+// recuperando o evento do emissor -> output-property-component.ts
+  onMudouValor(evento) {
+    // recuperando o valor novoValor do objeto evento
+    console.log(evento.novoValor);
+    this.novoValor = evento.novoValor;
+    
   }
 
   constructor() { }
